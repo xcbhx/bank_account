@@ -23,7 +23,11 @@ class BankAccount:
             # Subtract the amount from the balance if sufficient funds
             self.balance -= amount
             print(f'Amount Withdrawn: ${amount} New Balance: ${self.balance}')
-
+    
+    def get_balance(self):
+        """Print user-friendly message with the account balance and then return the current balance"""
+        print(f'Here is your account information. Account Balance:${self.balance}')
+        return self.balance
 
 
 
@@ -34,5 +38,8 @@ print(f'Initial Balance: ${customer.balance}')
 
 # Call the deposit method 
 customer.deposit(50) 
-customer.withdraw(60)
-    
+customer.withdraw(0)
+
+
+balance = customer.get_balance()
+print(f'The current balance is: ${balance}')
