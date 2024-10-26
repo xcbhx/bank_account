@@ -1,18 +1,26 @@
+# Import the random library
+import random
+
 class BankAccount:
-    def __init__(self, full_name, account_number, balance):
+    def __init__(self, full_name, account_number, balance=0):
         self.name = full_name
-        self.account = account_number
+        self.account = random.randint(10000000, 99999999)
         self.balance = balance
 
+    def deposit(self, amount):
+        """Add a specified amount to the balance""" #Docstring
+        # Update the balance by adding the amount
+        self.balance += amount
+        print(f"Amount Deposited: ${amount} New Balance: ${self.balance}")
+
+
+
+
 # Instantiate the class outside of the class definition
-customer = BankAccount("Acs 1111", 12345, 50)
+customer = BankAccount('Acs 1111', 20)
 
-# print(customer.balance)
+print(f'Initial Balance: ${customer.balance}')
 
-def deposit(amount):
-    deposited = float(input("Amount Deposit: $ "))
-    balance = amount
-    new_balance = deposited + balance
-    print(f"Amount Deposited: ${deposited} New Balance: ${new_balance}")
-
-deposit(0)
+# Call the deposit method the instance
+customer.deposit(50) 
+    
