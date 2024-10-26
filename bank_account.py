@@ -35,7 +35,9 @@ class BankAccount:
         self.balance += interest
         print(f'New balance with interest: ${self.balance}')
 
-
+    def print_statement(self):
+        """Display message with the account name, account number, and balance"""
+        print(f'{self.name}\nAccount No.:{self.account}\nBalance: ${self.balance}')
 
 
 
@@ -48,6 +50,7 @@ print(f'Initial Balance: ${customer.balance}')
 customer.deposit(50) 
 customer.withdraw(10)
 customer.add_interest()
+customer.print_statement()
 
 
 
