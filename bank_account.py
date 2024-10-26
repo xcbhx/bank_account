@@ -4,7 +4,7 @@ import random
 class BankAccount:
     def __init__(self, full_name, account_number, balance=0):
         self.name = full_name
-        self.account_number = random.randint(10000000, 99999999)
+        self.account = random.randint(10000000, 99999999)
         self.balance = balance
 
     def deposit(self, amount):
@@ -28,6 +28,14 @@ class BankAccount:
         """Print user-friendly message with the account balance and then return the current balance"""
         print(f'Here is your account information. Account Balance:${self.balance}')
         return self.balance
+    
+    def add_interest(self):
+        """Add annual interest to users balance."""
+        interest = self.balance *  0.00083
+        self.balance += interest
+        print(f'New balance with interest: ${self.balance}')
+
+
 
 
 
@@ -38,7 +46,9 @@ print(f'Initial Balance: ${customer.balance}')
 
 # Call the deposit method 
 customer.deposit(50) 
-customer.withdraw(0)
+customer.withdraw(10)
+customer.add_interest()
+
 
 
 balance = customer.get_balance()
