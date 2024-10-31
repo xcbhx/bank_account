@@ -51,7 +51,6 @@ customer = BankAccount('Acs 1111')
 new_customer = BankAccount('Mitchell', '03141592')
 
 print(f'Initial Balance: ${customer.balance}')
-print(f'Initial Balance: ${new_customer.balance}')
 
 # Call the deposit method 
 customer.deposit(50) 
@@ -62,6 +61,8 @@ customer.print_statement()
 balance = customer.get_balance()
 print(f'The current balance is: ${balance}')
 
+
+print(f'Initial Balance: ${new_customer.balance}')
 new_customer.deposit(400000)
 new_customer.add_interest()
 new_customer.withdraw(150)
